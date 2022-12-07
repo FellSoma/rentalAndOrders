@@ -1,0 +1,84 @@
+﻿<Window x:Class="RentalSBP.AdminWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:RentalSBP"
+        mc:Ignorable="d"
+        Title="История Входа"
+        Height="450" 
+        WindowStartupLocation="CenterScreen"
+        Width="890">
+    <Grid
+        Background="#FF49A950">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="659*"/>
+            <ColumnDefinition Width="140*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="27*"/>
+            <RowDefinition Height="370*"/>
+        </Grid.RowDefinitions>
+        <DataGrid
+            Grid.Row="1"
+            x:Name="DataGridListHisory"
+            AutoGenerateColumns="False"
+            IsReadOnly="True"
+            ColumnWidth="auto"
+            Grid.Column="0"
+            CanUserAddRows="False"
+            Margin="10,10,14,10">
+            <DataGrid.Columns>
+                <DataGridTemplateColumn x:Name="lastNameColmn" Header="Фото" >
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Image Width="100" Height="80" Source="{Binding Emploee.Photo}"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTextColumn  Header="Имя" Binding="{Binding Emploee.Name}"/>
+                <DataGridTextColumn  Header="Фамилия" Binding="{Binding Emploee.LastName}"/>
+                <DataGridTextColumn  Header="Отчиство" Binding="{Binding Emploee.Patronymic}"/>
+                <DataGridTextColumn  Header="Login" Binding="{Binding Login}"/>
+                <DataGridTextColumn  Header="Дата входа" Binding="{Binding LoginDate}"/>
+                <DataGridTextColumn  Header="Результат входа" Binding="{Binding SuccessfulLogin}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <TextBlock
+            Text="Поиск по логину:"
+            Grid.Column="1"
+            Grid.Row="1"
+            Margin="10,12,12,12"
+            Height="26"
+            Width="120"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Top"
+            />
+
+        <TextBox
+            PreviewKeyUp="SearchPhone_PreviewKeyUp"
+            Height="26"
+            Width="120"
+            HorizontalAlignment="Center"
+            Grid.Column="1"
+            Grid.Row="1"
+            VerticalAlignment="Top"
+            x:Name="SearchPhone"
+            Margin="10,35,10,10"/>
+        
+        <Button
+            Content="Выход"
+            Margin="1,0,10,10"
+            Grid.Row="2"
+            Height="26"
+            Width="100"
+            Click="Close"
+            HorizontalAlignment="Right"
+            VerticalAlignment="Bottom"
+            Grid.Column="1"/>
+
+
+
+    </Grid>
+</Window>

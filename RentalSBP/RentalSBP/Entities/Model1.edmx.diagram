@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="b0f227f7ed1d4a929f41d3048e922a01" Name="Diagram1">
+        <EntityTypeShape EntityType="RentalSBPModel.Client" Width="1.5" PointX="6" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="RentalSBPModel.Emploee" Width="1.5" PointX="3" PointY="4.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="RentalSBPModel.JobTitle" Width="1.5" PointX="0.75" PointY="5.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="RentalSBPModel.LoginHistory" Width="1.5" PointX="5.25" PointY="5.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="RentalSBPModel.Order" Width="1.5" PointX="8.25" PointY="4.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="RentalSBPModel.OrderStatu" Width="1.5" PointX="6" PointY="8.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="RentalSBPModel.Service" Width="1.5" PointX="8.25" PointY="1.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="RentalSBPModel.ServicesOrder" Width="1.5" PointX="10.5" PointY="5.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="RentalSBPModel.sysdiagram" Width="1.5" PointX="0.75" PointY="8.875" IsExpanded="true" />
+        <AssociationConnector Association="RentalSBPModel.FK_Orders_Clients" ManuallyRouted="false" />
+        <AssociationConnector Association="RentalSBPModel.FK_Emploees_JobTitle" ManuallyRouted="false" />
+        <AssociationConnector Association="RentalSBPModel.FK_LoginHistory_Emploees" ManuallyRouted="false" />
+        <AssociationConnector Association="RentalSBPModel.FK_Orders_Emploees" ManuallyRouted="false" />
+        <AssociationConnector Association="RentalSBPModel.FK_Orders_OrderStatus" ManuallyRouted="false" />
+        <AssociationConnector Association="RentalSBPModel.FK_ServicesOrder_Orders" ManuallyRouted="false" />
+        <AssociationConnector Association="RentalSBPModel.FK_ServicesOrder_Services" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

@@ -1,0 +1,253 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="RentalSBPModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Client">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="LastName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="MiddleName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="PassportData" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="DateOfBirth" Type="DateTime" Precision="0" />
+    <Property Name="Address" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Email" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Number" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Orders" Relationship="Self.FK_Orders_Clients" FromRole="Clients" ToRole="Orders" />
+  </EntityType>
+  <EntityType Name="Emploee">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="LastName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="MiddleName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="E_mail" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Password" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Photo" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <NavigationProperty Name="LoginHistories" Relationship="Self.FK_LoginHistory_Emploees" FromRole="Emploees" ToRole="LoginHistory" />
+    <NavigationProperty Name="Orders" Relationship="Self.FK_Orders_Emploees" FromRole="Emploees" ToRole="Orders" />
+    <Property Name="id_JobTitle" Type="Int32" />
+    <NavigationProperty Name="JobTitle2" Relationship="RentalSBPModel.FK_Emploees_JobTitle1" FromRole="Emploee" ToRole="JobTitle" />
+  </EntityType>
+  <EntityType Name="JobTitle">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Emploees" Relationship="Self.FK_Emploees_JobTitle" FromRole="JobTitle" ToRole="Emploees" />
+    <NavigationProperty Name="Emploees1" Relationship="RentalSBPModel.FK_Emploees_JobTitle1" FromRole="JobTitle" ToRole="Emploee" />
+  </EntityType>
+  <EntityType Name="LoginHistory">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="Id_Employee" Type="Int32" />
+    <Property Name="LoginDate" Type="DateTime" Precision="3" />
+    <Property Name="SuccessfulLogin" Type="Boolean" />
+    <NavigationProperty Name="Emploee" Relationship="Self.FK_LoginHistory_Emploees" FromRole="LoginHistory" ToRole="Emploees" />
+  </EntityType>
+  <EntityType Name="Order">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="CodeOrder" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="DateCreate" Type="DateTime" Precision="0" />
+    <Property Name="TimeOrder" Type="Time" Precision="7" />
+    <Property Name="Id_Client" Type="Int32" />
+    <Property Name="Id_OrderStatus" Type="Int32" />
+    <Property Name="DateClosing" Type="DateTime" Precision="0" />
+    <Property Name="TimeRental" Type="Double" />
+    <Property Name="Id_Creator_Employee" Type="Int32" />
+    <NavigationProperty Name="Client" Relationship="Self.FK_Orders_Clients" FromRole="Orders" ToRole="Clients" />
+    <NavigationProperty Name="Emploee" Relationship="Self.FK_Orders_Emploees" FromRole="Orders" ToRole="Emploees" />
+    <NavigationProperty Name="OrderStatu" Relationship="Self.FK_Orders_OrderStatus" FromRole="Orders" ToRole="OrderStatus" />
+    <NavigationProperty Name="ServicesOrders" Relationship="Self.FK_ServicesOrder_Orders" FromRole="Orders" ToRole="ServicesOrder" />
+  </EntityType>
+  <EntityType Name="OrderStatu">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Orders" Relationship="Self.FK_Orders_OrderStatus" FromRole="OrderStatus" ToRole="Orders" />
+  </EntityType>
+  <EntityType Name="Service">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="CodeServices" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="СostPerHour" Type="Decimal" Precision="19" Scale="4" />
+    <NavigationProperty Name="ServicesOrders" Relationship="Self.FK_ServicesOrder_Services" FromRole="Services" ToRole="ServicesOrder" />
+  </EntityType>
+  <EntityType Name="ServicesOrder">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="Id_Order" Type="Int32" />
+    <Property Name="Id_Service" Type="Int32" />
+    <NavigationProperty Name="Order" Relationship="Self.FK_ServicesOrder_Orders" FromRole="ServicesOrder" ToRole="Orders" />
+    <NavigationProperty Name="Service" Relationship="Self.FK_ServicesOrder_Services" FromRole="ServicesOrder" ToRole="Services" />
+  </EntityType>
+  <Association Name="FK_Orders_Clients">
+    <End Role="Clients" Type="Self.Client" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Orders" Type="Self.Order" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Clients">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Orders">
+        <PropertyRef Name="Id_Client" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Emploees_JobTitle">
+    <End Role="JobTitle" Type="Self.JobTitle" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Emploees" Type="Self.Emploee" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="JobTitle">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Emploees">
+        <PropertyRef Name="id_JobTitle" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_LoginHistory_Emploees">
+    <End Role="Emploees" Type="Self.Emploee" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="LoginHistory" Type="Self.LoginHistory" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Emploees">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="LoginHistory">
+        <PropertyRef Name="Id_Employee" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Orders_Emploees">
+    <End Role="Emploees" Type="Self.Emploee" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Orders" Type="Self.Order" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Emploees">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Orders">
+        <PropertyRef Name="Id_Creator_Employee" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Orders_OrderStatus">
+    <End Role="OrderStatus" Type="Self.OrderStatu" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Orders" Type="Self.Order" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="OrderStatus">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Orders">
+        <PropertyRef Name="Id_OrderStatus" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ServicesOrder_Orders">
+    <End Role="Orders" Type="Self.Order" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="ServicesOrder" Type="Self.ServicesOrder" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Orders">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ServicesOrder">
+        <PropertyRef Name="Id_Order" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ServicesOrder_Services">
+    <End Role="Services" Type="Self.Service" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="ServicesOrder" Type="Self.ServicesOrder" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Services">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ServicesOrder">
+        <PropertyRef Name="Id_Service" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="RentalSBPEntities1" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Clients" EntityType="Self.Client" />
+    <EntitySet Name="Emploees" EntityType="Self.Emploee" />
+    <EntitySet Name="JobTitles" EntityType="Self.JobTitle" />
+    <EntitySet Name="LoginHistories" EntityType="Self.LoginHistory" />
+    <EntitySet Name="Orders" EntityType="Self.Order" />
+    <EntitySet Name="OrderStatus" EntityType="Self.OrderStatu" />
+    <EntitySet Name="Services" EntityType="Self.Service" />
+    <EntitySet Name="ServicesOrders" EntityType="Self.ServicesOrder" />
+    <AssociationSet Name="FK_Orders_Clients" Association="Self.FK_Orders_Clients">
+      <End Role="Clients" EntitySet="Clients" />
+      <End Role="Orders" EntitySet="Orders" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Emploees_JobTitle" Association="Self.FK_Emploees_JobTitle">
+      <End Role="JobTitle" EntitySet="JobTitles" />
+      <End Role="Emploees" EntitySet="Emploees" />
+    </AssociationSet>
+    <AssociationSet Name="FK_LoginHistory_Emploees" Association="Self.FK_LoginHistory_Emploees">
+      <End Role="Emploees" EntitySet="Emploees" />
+      <End Role="LoginHistory" EntitySet="LoginHistories" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Orders_Emploees" Association="Self.FK_Orders_Emploees">
+      <End Role="Emploees" EntitySet="Emploees" />
+      <End Role="Orders" EntitySet="Orders" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Orders_OrderStatus" Association="Self.FK_Orders_OrderStatus">
+      <End Role="OrderStatus" EntitySet="OrderStatus" />
+      <End Role="Orders" EntitySet="Orders" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ServicesOrder_Orders" Association="Self.FK_ServicesOrder_Orders">
+      <End Role="Orders" EntitySet="Orders" />
+      <End Role="ServicesOrder" EntitySet="ServicesOrders" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ServicesOrder_Services" Association="Self.FK_ServicesOrder_Services">
+      <End Role="Services" EntitySet="Services" />
+      <End Role="ServicesOrder" EntitySet="ServicesOrders" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Emploees_JobTitle1" Association="RentalSBPModel.FK_Emploees_JobTitle1">
+      <End Role="JobTitle" EntitySet="JobTitles" />
+      <End Role="Emploee" EntitySet="Emploees" />
+    </AssociationSet>
+  </EntityContainer>
+  <Association Name="FK_Emploees_JobTitle1">
+    <End Type="RentalSBPModel.JobTitle" Role="JobTitle" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="RentalSBPModel.Emploee" Role="Emploee" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="JobTitle">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Emploee">
+        <PropertyRef Name="id_JobTitle" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

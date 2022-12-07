@@ -1,0 +1,110 @@
+﻿<Window x:Class="RentalSBP.newOrders"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:RentalSBP"
+        mc:Ignorable="d"
+        Title="Создать заказ"
+        WindowStartupLocation="CenterScreen"
+        FontFamily="Comic Sans MS"
+        Height="550" 
+        Width="1080">
+    <Grid
+        Background="#FF49A950">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="527*"/>
+            <ColumnDefinition Width="173*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="27*"/>
+            <RowDefinition Height="373*"/>
+            <RowDefinition Height="34*"/>
+        </Grid.RowDefinitions>
+        <DataGrid
+            Grid.Row="1"
+            x:Name="DataGridClients"
+            AutoGenerateColumns="False"
+            ColumnWidth="auto"
+            IsReadOnly="True"
+            CanUserAddRows="False"
+            Margin="10,10,10,10" >
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Имя" Binding="{Binding Name}"/>
+                <DataGridTextColumn Header="Фамилия" Binding="{Binding LastName}"/>
+                <DataGridTextColumn Header="Отчество" Binding="{Binding Patronymic}"/>
+                <DataGridTextColumn Header="Паспортные данные" Binding="{Binding PassportData}"/>
+                <DataGridTextColumn Header="Телефон" Binding="{Binding Phone}"/>
+                <DataGridTextColumn Header="E-mail" Binding="{Binding Email}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <StackPanel
+            Orientation="Vertical" 
+            Grid.Row="1"
+            Grid.Column="1">
+            <TextBlock 
+                Text="Поиск по номеру телефона"
+                Margin="10,10,10,0"/>
+            
+            <TextBox
+                PreviewKeyUp="SearchPhone_PreviewKeyUp"
+                Height="26"
+                x:Name="SearchPhone"
+                Margin="10"/>
+
+            <StackPanel
+                Orientation="Horizontal">
+                <TextBlock
+                    Margin="10,0,0,0"
+                    Text="Время проката:"/>
+                <TextBox
+                    Width="80"
+                    x:Name="timeRentHour"
+                    Height="26"
+                    Margin="10,0,0,0"/>
+            </StackPanel>
+            
+            <TextBlock
+                Text="Услуги:"
+                Margin="10"/>
+            <StackPanel
+                x:Name="spServices"
+                Orientation="Vertical">
+                
+               <ComboBox
+                   x:Name="cbService"
+                   SelectedItem="{Binding Services}"
+                   DisplayMemberPath="Name"
+                   Margin="10,0,10,5"/>
+                
+            </StackPanel>
+            
+            <Button
+                Click="AddServeses"
+                Content="+"
+                Margin="110,0,110,0"/>
+        </StackPanel>
+
+        <Button
+                Content="Добавить клиента"
+                Margin="0,0,120,10"
+                Grid.Column="1"
+                Grid.Row="1"
+                Height="26"
+                Width="150"
+                Click="AddClient"
+                HorizontalAlignment="Right"
+                VerticalAlignment="Bottom"/>
+        
+        <Button
+                Content="Создать заказ"
+                Margin="10"
+                Grid.Column="1"
+                Grid.Row="1"
+                Height="26"
+                Width="100"
+                Click="AddOrder"
+                HorizontalAlignment="Right"
+                VerticalAlignment="Bottom"/>
+    </Grid>
+</Window>

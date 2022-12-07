@@ -1,0 +1,178 @@
+﻿<Window x:Class="RentalSBP.NewClient"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:RentalSBP"
+        mc:Ignorable="d"
+        Title="Добавление клиента" 
+        Height="420" 
+        Width="600"
+         FontFamily="Comic Sans MS"
+        WindowStartupLocation="CenterScreen">
+    <Grid
+        Background="#FF49A950">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="120*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="200*"/>
+        </Grid.RowDefinitions>
+
+        <!--Фамилия-->
+        <TextBlock
+            Text="Фамилия:"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Margin="10,34,0,0"
+            Width="150"
+            Height="26"/>
+        <TextBox
+            Margin="130,30,10,11"
+            Width="150"
+            x:Name="lastNameBx"
+            VerticalContentAlignment="Center"
+            Height="26"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"/>
+
+        <!--Имя-->
+        <TextBlock
+            Text="Имя:"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Margin="10,64,0,0"
+            Width="150"
+            Height="26"/>
+        <TextBox
+            Margin="130,60,10,11"
+            Width="150"
+            x:Name="nameBx"
+            VerticalContentAlignment="Center"
+            Height="26"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"/>
+        <!--Отчество-->
+        <TextBlock
+            Text="Отчество:"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Margin="10,94,0,0"
+            Width="150"
+            Height="26"/>
+
+        <TextBox
+            Margin="130,90,10,11"
+            Width="150"
+            x:Name="middleNameBx"
+            VerticalContentAlignment="Center"
+            Height="26"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"/>
+        <!--Паспортные данные-->
+        <TextBlock
+            Text="Паспортые данные:"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Margin="10,124,0,0"
+            Width="150"
+            Height="26"/>
+
+        <TextBox
+            Margin="130,120,10,11"
+            Width="150"
+            x:Name="passportDataBx"
+            VerticalContentAlignment="Center"
+            Height="26"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"/>
+        <!--Дата рождения-->
+        <TextBlock
+            Text="Дата рождения:"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Margin="10,154,0,0"
+            Width="150"
+            Height="26"/>
+
+        <DatePicker
+            Margin="130,150,10,11"
+            Width="150"
+            VerticalContentAlignment="Center"
+            Height="26"
+            x:Name="dateDp"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"/>
+        <!--Адрес-->
+        <TextBlock
+            Text="Адрес:"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Margin="10,184,0,0"
+            Width="150"
+            Height="26"/>
+
+        <TextBox
+            Margin="130,180,10,11"
+            Width="150"
+            x:Name="addresBx"
+            VerticalContentAlignment="Center"
+            Height="26"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"/>
+        <!--Email-->
+        <TextBlock
+            Text="Email:"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Margin="10,214,0,0"
+            Width="150"
+            Height="26"/>
+
+        <TextBox
+            Margin="130,210,10,11"
+            Width="150"
+            x:Name="emailBx"
+            VerticalContentAlignment="Center"
+            Height="26"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"/>
+        <!--Pohne-->
+        <TextBlock
+            Text="Номер телефона:"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Margin="10,244,0,0"
+            Width="150"
+            Height="26"/>
+
+        <TextBox
+            Margin="130,240,10,11"
+            Width="150"
+            x:Name="phoneBx"
+            VerticalContentAlignment="Center"
+            Height="26"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"/>
+
+
+        <TextBlock
+            Margin="50,0,10,50"
+            Height="250"
+            x:Name="errorMessages"
+            Width="200"
+            HorizontalAlignment="Right"
+            VerticalAlignment="Center"/>
+        
+        <Button
+            Content="Добавить"
+            Margin="10,0,10,10"
+            Height="26"
+            Width="100"
+            Click="AddNewClient"
+            HorizontalAlignment="Right"
+            VerticalAlignment="Bottom"/>
+
+
+    </Grid>
+</Window>
