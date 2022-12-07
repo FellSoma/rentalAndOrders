@@ -8,7 +8,7 @@
         Title="История Входа"
         Height="450" 
         WindowStartupLocation="CenterScreen"
-        Width="890">
+        Width="750">
     <Grid
         Background="#FF49A950">
         <Grid.ColumnDefinitions>
@@ -16,16 +16,17 @@
             <ColumnDefinition Width="140*"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="27*"/>
-            <RowDefinition Height="370*"/>
+            <RowDefinition Height="25*"/>
+            <RowDefinition Height="192*"/>
         </Grid.RowDefinitions>
+        
         <DataGrid
             Grid.Row="1"
             x:Name="DataGridListHisory"
             AutoGenerateColumns="False"
             IsReadOnly="True"
             ColumnWidth="auto"
-            Grid.Column="0"
+            Grid.ColumnSpan="2"
             CanUserAddRows="False"
             Margin="10,10,14,10">
             <DataGrid.Columns>
@@ -47,30 +48,27 @@
 
         <TextBlock
             Text="Поиск по логину:"
-            Grid.Column="1"
-            Grid.Row="1"
-            Margin="10,12,12,12"
+            Grid.Column="0"
+            Margin="30,5,0,0"
             Height="26"
             Width="120"
-            HorizontalAlignment="Center"
-            VerticalAlignment="Top"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Center"
             />
 
         <TextBox
             PreviewKeyUp="SearchPhone_PreviewKeyUp"
             Height="26"
-            Width="120"
-            HorizontalAlignment="Center"
-            Grid.Column="1"
-            Grid.Row="1"
-            VerticalAlignment="Top"
-            x:Name="SearchPhone"
-            Margin="10,35,10,10"/>
-        
+            Width="220"
+            Margin="130,0,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Center"
+            x:Name="SearchPhone"/>
+
         <Button
             Content="Выход"
-            Margin="1,0,10,10"
-            Grid.Row="2"
+            Margin="0,0,10,10"
+            Grid.Row="0"
             Height="26"
             Width="100"
             Click="Close"

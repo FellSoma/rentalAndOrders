@@ -37,3 +37,42 @@ D:\VS Progect\RentalSBP\RentalSBP\obj\Debug\AdminWindow.g.cs
 D:\VS Progect\RentalSBP\RentalSBP\obj\Debug\AdminProfile.g.cs
 D:\VS Progect\RentalSBP\RentalSBP\obj\Debug\AdminWindow.baml
 D:\VS Progect\RentalSBP\RentalSBP\obj\Debug\AdminProfile.baml
+D:\Gits\PP\RentalSBP\RentalSBP\bin\Debug\RentalSBP.exe.config
+D:\Gits\PP\RentalSBP\RentalSBP\bin\Debug\RentalSBP.exe
+D:\Gits\PP\RentalSBP\RentalSBP\bin\Debug\RentalSBP.pdb
+D:\Gits\PP\RentalSBP\RentalSBP\bin\Debug\EntityFramework.dll
+D:\Gits\PP\RentalSBP\RentalSBP\bin\Debug\EntityFramework.SqlServer.dll
+D:\Gits\PP\RentalSBP\RentalSBP\bin\Debug\EntityFramework.xml
+D:\Gits\PP\RentalSBP\RentalSBP\bin\Debug\EntityFramework.SqlServer.xml
+D:\Gits\PP\RentalSBP\RentalSBP\bin\Debug\ru\EntityFramework.resources.dll
+D:\Gits\PP\RentalSBP\RentalSBP\obj\Debug\RentalSBP.csproj.AssemblyReference.cache
+D:\Gits\PP\RentalSBP\RentalSBP\obj\Debug\RentalSBP.csproj.SuggestedBindingRedirects.cache
+D:\Gits\PP\RentalSBP\RentalSBP\obj\Debug\AdminProfile.g.cs
+D:\Gits\PP\RentalSBP\RentalSBP\obj\Debug\AdminWindow.g.cs
+D:\Gits\PP\RentalSBP\RentalSBP\obj\Debug\EditOrders.g.cs
+D:\Gits\PP\RentalSBP\RentalSBP\obj\Debug\Home.g.cs
+D:\Gits\PP\RentalSBP\RentalSBP\obj\Debug\HomeSeniorSeller.g.cs
+D:\Gits\PP\RentalSBP\RentalSBP\obj\Debug\MainWindow.g.cs
+D:\Gits\PP\RentalSBP\RentalSBP\obj\Debug\NewClient.g.cs
+D:\Gits\PP\RentalSBP\RentalSBP\obj\Debug\newOrders.g.cs
+D:\Gits\PP\RentalSBP\RentalSBP\obj\Debug\OutTimer.g.cs
+D:\Gits\PP\RentalSBP\RentalSBP\obj\Debug\App.g.cs
+D:\Gits\PP\RentalSBP\RentalSBP\obj\Debug\RentalSBP_Content.g.cs
+D:\Gits\PP\RentalSBP\RentalSBP\obj\Debug\RentalSBP_MarkupCompile.cache
+D:\Gits\PP\RentalSBP\RentalSBP\obj\Debug\RentalSBP_MarkupCompile.lref
+D:\Gits\PP\RentalSBP\RentalSBP\obj\Debug\AdminProfile.baml
+D:\Gits\PP\RentalSBP\RentalSBP\obj\Debug\AdminWindow.baml
+D:\Gits\PP\RentalSBP\RentalSBP\obj\Debug\EditOrders.baml
+D:\Gits\PP\RentalSBP\RentalSBP\obj\Debug\Home.baml
+D:\Gits\PP\RentalSBP\RentalSBP\obj\Debug\HomeSeniorSeller.baml
+D:\Gits\PP\RentalSBP\RentalSBP\obj\Debug\MainWindow.baml
+D:\Gits\PP\RentalSBP\RentalSBP\obj\Debug\NewClient.baml
+D:\Gits\PP\RentalSBP\RentalSBP\obj\Debug\newOrders.baml
+D:\Gits\PP\RentalSBP\RentalSBP\obj\Debug\OutTimer.baml
+D:\Gits\PP\RentalSBP\RentalSBP\obj\Debug\RentalSBP.g.resources
+D:\Gits\PP\RentalSBP\RentalSBP\obj\Debug\RentalSBP.Properties.Resources.resources
+D:\Gits\PP\RentalSBP\RentalSBP\obj\Debug\RentalSBP.csproj.GenerateResource.cache
+D:\Gits\PP\RentalSBP\RentalSBP\obj\Debug\RentalSBP.csproj.CoreCompileInputs.cache
+D:\Gits\PP\RentalSBP\RentalSBP\obj\Debug\RentalSBP.csproj.CopyComplete
+D:\Gits\PP\RentalSBP\RentalSBP\obj\Debug\RentalSBP.exe
+D:\Gits\PP\RentalSBP\RentalSBP\obj\Debug\RentalSBP.pdb

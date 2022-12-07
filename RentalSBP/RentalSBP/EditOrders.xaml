@@ -7,19 +7,18 @@
         mc:Ignorable="d"
         Title="Приём заказа"
         Height="450" 
-        Width="800"
+        Width="710"
         FontFamily="Comic Sans MS"
         WindowStartupLocation="CenterScreen">
     <Grid
         Background="#FF49A950">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="313*"/>
-            <ColumnDefinition Width="87*"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="27*"/>
-            <RowDefinition Height="373*"/>
-            <RowDefinition Height="34*"/>
+            <RowDefinition Height="18*"/>
+            <RowDefinition Height="182*"/>
+            <RowDefinition Height="17*"/>
         </Grid.RowDefinitions>
         <DataGrid
             Grid.Row="1"
@@ -42,7 +41,7 @@
                             <Setter Property="ToolTip" Value="Кликните 2 рзаа чтобы изменить" />
                         </Style>
                     </DataGridComboBoxColumn.CellStyle>
-                    
+
                     <DataGridComboBoxColumn.EditingElementStyle>
                         <Style TargetType="{x:Type ComboBox}">
                             <EventSetter Event="SelectionChanged" Handler="SomeSelectionChanged" />
@@ -56,20 +55,20 @@
 
         <Button
             Content="Изменить"
-            Margin="10,10,10,10"
-            Grid.Column="1"
-            Grid.Row="1"
+            Margin="10,10,0,0"
+            Grid.Column="0"
+            Grid.Row="0"
             Height="26"
             Width="100"
             Click="Edit"
             HorizontalAlignment="Left"
             VerticalAlignment="Bottom"/>
-        
+
         <Button
             Content="Сохранить"
-            Margin="10,10,10,46"
-            Grid.Column="1"
-            Grid.Row="1"
+            Margin="120,0,0,0"
+            Grid.Column="0"
+            Grid.Row="0"
             IsEnabled="False"
             x:Name="saveEdit"
             Height="26"

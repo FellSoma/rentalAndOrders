@@ -4,16 +4,16 @@
 winexe
 C#
 .cs
-D:\VS Progect\RentalSBP\RentalSBP\obj\Debug\
+D:\Gits\PP\RentalSBP\RentalSBP\obj\Debug\
 RentalSBP
 none
 false
 DEBUG;TRACE
-D:\VS Progect\RentalSBP\RentalSBP\App.xaml
+D:\Gits\PP\RentalSBP\RentalSBP\App.xaml
 91235896823
 2-1189279499
 26-1737678195
-19471902680
+19-277176380
 AdminProfile.xaml;AdminWindow.xaml;EditOrders.xaml;Home.xaml;HomeSeniorSeller.xaml;MainWindow.xaml;NewClient.xaml;newOrders.xaml;OutTimer.xaml;
 
 False
