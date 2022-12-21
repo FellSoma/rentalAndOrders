@@ -3,6 +3,7 @@ using System;
 using System.Drawing;
 using System.Linq;
 using System.Runtime.InteropServices;
+using System.Security.Cryptography;
 using System.Windows;
 using System.Windows.Interop;
 using System.Windows.Media;
@@ -135,24 +136,29 @@ namespace RentalSBP
 
         private void Sing(object sender, RoutedEventArgs e)
         {
+            //Создание локальной переменной
             Emploee authUser = null;
+
+            //Поиск пользователей по E-mail
             authUser = db.Emploees.Where(b => b.E_mail == MailBx.Text).FirstOrDefault();
+
             if (authUser != null)
             {
                 if (authUser.Password == passwordBx.Password)
                 {
                     ConnectionWindow connection = new ConnectionWindow();
                     App.Emploee_id.id = authUser.Id;
+                    //Открытие окон по Должности
                     switch (authUser.id_JobTitle)
                     {
                         case 1:
+                            //создание локальной перременной и её заполнение
                             Entities.LoginHistory loginHistory = new Entities.LoginHistory()
                             {
                                 LoginDate = DateTime.Now,
                                 Id_Employee = authUser.Id,
                                 SuccessfulLogin = true,
                                 Login = authUser.E_mail
-                                
                             };
                             Entities.RentalSBPEntities context = new RentalSBPEntities();
                             context.LoginHistories.Add(loginHistory);
@@ -167,7 +173,6 @@ namespace RentalSBP
                                 Id_Employee = authUser.Id,
                                 SuccessfulLogin = true,
                                 Login = authUser.E_mail
-
                             };
                             Entities.RentalSBPEntities context2 = new RentalSBPEntities();
                             context2.LoginHistories.Add(loginHistory2);
@@ -195,6 +200,16 @@ namespace RentalSBP
                 else
                 {
                     MessageBox.Show("Неверный пароль");
+
+                    i = i + 1;
+                    if (i == 3)
+                    {
+                        ImCaph.Visibility = Visibility.Visible;
+                        ImCaph.Source = ImageSourceFromBitmap(CreateImage(200, 50));
+                        capchaTB.Visibility = Visibility.Visible;
+                        CaphBtn.Visibility = Visibility.Visible;
+                        autorizationBtn.IsEnabled = false;
+                    }
 
                     Entities.LoginHistory loginHistory = new Entities.LoginHistory()
                     {
